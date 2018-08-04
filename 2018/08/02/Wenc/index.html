@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Wenc的个人博客">
 <meta property="og:description" content="String,StringBuffer与StringBuilder的区别1.首先在执行速度上  StringBuilder&amp;gt;StringBuffer&amp;gt;String ​    原因如下：String为字符串常量，StringBuilder和StringBuffer均为字符串变量。String对象创建之后不可更改，后面两种对象是变量，可以更改。 ​    例如：String str=&amp;qu">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-04T00:09:15.795Z">
+<meta property="og:updated_time" content="2018-08-04T05:35:23.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java高级阶段学习">
 <meta name="twitter:description" content="String,StringBuffer与StringBuilder的区别1.首先在执行速度上  StringBuilder&amp;gt;StringBuffer&amp;gt;String ​    原因如下：String为字符串常量，StringBuilder和StringBuffer均为字符串变量。String对象创建之后不可更改，后面两种对象是变量，可以更改。 ​    例如：String str=&amp;qu">
@@ -184,10 +184,14 @@
 <p>​    2)单线程下操作大量数据用StringBuilder。</p>
 <p>​    3)多线程下操作大量数据使用StringBuffer。</p>
 <h2 id="System类中的一个常用方法"><a href="#System类中的一个常用方法" class="headerlink" title="System类中的一个常用方法"></a>System类中的一个常用方法</h2><p>​    System类中的静态方法<code>Long currentTimeMillis();</code> 获取当前系统时间与1970年01月01日00:00点之间的毫秒差值。使用方式为： <code>System.currentTimeMillis();</code>   通常用来计算程序所消耗的时间差值。</p>
-<h2 id="日期与日历"><a href="#日期与日历" class="headerlink" title="日期与日历"></a>日期与日历</h2><p>​    Date类的两个构造函数：</p>
+<h2 id="日期与日历"><a href="#日期与日历" class="headerlink" title="日期与日历"></a>日期与日历</h2><p>​    <strong>Date类的两个构造函数：</strong></p>
 <p>​    <code>Date()</code>    分配 Date 对象并初始化此对象，以表示分配它的时间（精确到毫秒）。</p>
 <p>​    <code>Date(long date)</code>   分配 Date 对象并初始化此对象，以表示自从标准基准时间（称为“历元（epoch）”，即 1970 年  1 月 1 日 00:00:00 GMT）以来的指定毫秒数。</p>
 <p>​    Date类当中很多方法都被<em>DateFormat</em>和<em>Calendar</em>所取代，因此以下为<em>DateFormat</em>和<em>Calendar</em>两个类的学习笔记。</p>
+<p>​    <strong><em>DateFormat</em>类是日期/时间格式化子类的抽象类，我们可以通过这个类帮我们完成Date对象和String对象之间的转换。分为格式化和解析两种转换方式。</strong></p>
+<p>​    常用规则为：y —-&gt; 年，M —-&gt; 月，d —-&gt; 日，H —-&gt; 时，m —-&gt; 分，s —-&gt; 秒</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">		/*</span><br><span class="line"> 		 格式化：将Date对象按照指定格式格式化为String对象</span><br><span class="line">		 */</span><br><span class="line">        Date date = new Date();</span><br><span class="line">        //创建日期格式化对象，并指定格式</span><br><span class="line">        DateFormat df = new SimpleDateFormat(&quot;yyyy-MM-dd HH-mm-ss&quot;);</span><br><span class="line">        String str = df.format(date);//将Date对象格式化为字符串</span><br><span class="line">        System.out.println(str);//2018-08-04 13-22-32</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) throws ParseException &#123;</span><br><span class="line">        /*</span><br><span class="line">          解析：将String对象按照指定格式解析为Date对象</span><br><span class="line">          */</span><br><span class="line">        DateFormat df = new SimpleDateFormat(&quot;yyyy-MM-dd HH-mm-ss&quot;);</span><br><span class="line">        String str = &quot;2018-08-04 13-28-52&quot;;</span><br><span class="line">        Date date = df.parse(str);//将字符串解析为Date对象</span><br><span class="line">        System.out.println(date);//Sat Aug 04 13:28:52 CST 2018</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
       
 
