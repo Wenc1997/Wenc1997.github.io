@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | Wenc的个人博客</title>
+  <title>数据库阶段学习 | Wenc的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Wenc的个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="MySQL学习DDL:操作数据库、表(Data Definition Language)数据库定义语言，用于操作数据库和表。 1.操作数据库：CRUD​    1.创建数据库：C(Create) ​    create database 数据库名;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库阶段学习">
+<meta property="og:url" content="http://yoursite.com/2018/08/15/Database/index.html">
 <meta property="og:site_name" content="Wenc的个人博客">
+<meta property="og:description" content="MySQL学习DDL:操作数据库、表(Data Definition Language)数据库定义语言，用于操作数据库和表。 1.操作数据库：CRUD​    1.创建数据库：C(Create) ​    create database 数据库名;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-16T13:06:34.582Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wenc的个人博客">
+<meta name="twitter:title" content="数据库阶段学习">
+<meta name="twitter:description" content="MySQL学习DDL:操作数据库、表(Data Definition Language)数据库定义语言，用于操作数据库和表。 1.操作数据库：CRUD​    1.创建数据库：C(Create) ​    create database 数据库名;">
   
     <link rel="alternative" href="/atom.xml" title="Wenc的个人博客" type="application/atom+xml">
   
@@ -144,76 +148,210 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Database" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      数据库阶段学习
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/15/Database/" class="archive-article-date">
+
+        
+        <a href="/2018/08/15/Database/" class="archive-article-date">
   	<time datetime="2018-08-15T11:19:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/15/Database/">数据库阶段学习</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="MySQL学习"><a href="#MySQL学习" class="headerlink" title="MySQL学习"></a>MySQL学习</h1><h2 id="DDL-操作数据库、表"><a href="#DDL-操作数据库、表" class="headerlink" title="DDL:操作数据库、表"></a>DDL:操作数据库、表</h2><p>(Data Definition Language)数据库定义语言，用于操作数据库和表。</p>
+<h3 id="1-操作数据库：CRUD"><a href="#1-操作数据库：CRUD" class="headerlink" title="1.操作数据库：CRUD"></a>1.操作数据库：CRUD</h3><p>​    <strong>1.创建数据库</strong>：C(Create)</p>
+<p>​    create database 数据库名;<a id="more"></a></p>
+<p>​    create database if not exists 数据库名称; <strong>–判断不存在，再创建</strong></p>
+<p>​    create database 数据库 character set 字符集合; <strong>–指定字符集</strong></p>
+<p>​    <strong>2.查询数据库</strong>：R(Retrieve) 查询时用关键字show。</p>
+<p>​    show databases;     <strong>–查询所有数据库的名称</strong></p>
+<p>​    show create table 数据库名称; <strong>–查询某个数据库的字符集：查询某个数据库的创建语句</strong></p>
+<p>​    <strong>3.修改数据库</strong>：U(Update) 修改时用关键字alter。</p>
+<p>​    alter database 数据库名称 character set 字符集合; <strong>#修改数据库的字符集</strong></p>
+<p>​    <strong>4.删除数据库</strong>：D(Delete)删除时用关键字drop。</p>
+<p>​    drop database 数据库名称; <strong>–删除数据库。</strong></p>
+<p>​    drop database if exists 数据库名称; <strong>–判断存在，存在再删除。</strong></p>
+<p>​    <strong>5.使用数据库</strong></p>
+<p>​    select database(); <strong>–查询正在使用的数据库名称。</strong></p>
+<p>​    use 数据库名称; <strong>#数据库名称。</strong></p>
+<h3 id="2-操作表：CRUD"><a href="#2-操作表：CRUD" class="headerlink" title="2.操作表：CRUD"></a>2.操作表：CRUD</h3><p>​    <strong>1.创建表</strong>：C(Create)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名(</span><br><span class="line">	列名<span class="number">1</span> 数据类型<span class="number">1</span>,</span><br><span class="line">   	列名<span class="number">2</span> 数据类型<span class="number">2</span>,</span><br><span class="line">  		...</span><br><span class="line">   	列名n 数据类型n</span><br><span class="line">);</span><br><span class="line">数据类型：整数类型 int</span><br><span class="line">		小数类型 double</span><br><span class="line">		日期	   date 只包含年月日，yyyy-MM-dd</span><br><span class="line">		日期	   datetime 包含年月日时分秒 yyyy-MM-dd HH:mm:ss</span><br><span class="line">		时间戳类型 timestamp 包含年月日时分秒 yyyy-MM-dd HH:mm:ss 如果将来不给这个字段赋值，或者赋值为null，则使用当前系统时间来自动赋值。</span><br><span class="line">		字符串	   varchar() 括号内必须定义大小</span><br><span class="line">复制表：</span><br><span class="line">	<span class="keyword">create</span> <span class="keyword">table</span> 表名 <span class="keyword">like</span> 被复制的表名;</span><br></pre></td></tr></table></figure>
+<p>​    <strong>2.查询表</strong>：R(Retrieve) 查询时用关键字show。</p>
+<p>​    show tables; 查询某个数据库的所有表名称。</p>
+<p>​    desc 表名; 查询表结构。</p>
+<p>​    <strong>3.修改表</strong>：U(Update) 修改时用关键字alter。</p>
+<p>​    alter table 表名 rename to 新的表名;  修改表名。</p>
+<p>​    alter table 表名 character set 字符集名称;  修改表的字符集。</p>
+<p>​    alter table 表名 add 列名 数据类型;  添加一列。</p>
+<p>​    alter table 表名 chenge 列名  新列名 数据类型; 修改列的名称 类型。</p>
+<p>​    alter table 表名 modify 列名 新数据类型;  修改数据类型。</p>
+<p>​    alter table 表名 drop 列名;  删除列。</p>
+<p>​    <strong>4.删除表</strong>：D(Delete)删除时用关键字drop。</p>
+<p>​    drop table 表名;  删除表</p>
+<p>​    drop table if exists 表名;  判断存在删除表。</p>
+<h2 id="DML-增删改表中的数据"><a href="#DML-增删改表中的数据" class="headerlink" title="DML:增删改表中的数据"></a>DML:增删改表中的数据</h2><p><strong>1.添加数据</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名(列名<span class="number">1</span>,列名<span class="number">2</span>,...列名n) <span class="keyword">values</span>(值<span class="number">1</span>,值<span class="number">2</span>,...值n);</span><br></pre></td></tr></table></figure>
+<p>列名和值要一一对应；如果表名之后不定义列名，则默认给所有列添加值。</p>
+<p><strong>2.删除数据</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> 表名 [<span class="keyword">where</span> 条件] <span class="comment">--不加条件，则删除表中所有数据。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> 表名;  <span class="comment">--先删除表，然后再创建一张一模一样的表。</span></span><br></pre></td></tr></table></figure>
+<p><strong>3.修改数据</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> 表名 <span class="keyword">set</span> 列名<span class="number">1</span>=值<span class="number">1</span>,列名<span class="number">2</span>=值<span class="number">2</span>,.... [<span class="keyword">where</span> 条件]; <span class="comment">--如果不加任何条件，则会修改全部记录</span></span><br></pre></td></tr></table></figure>
+<h2 id="DQL-查询表中的记录"><a href="#DQL-查询表中的记录" class="headerlink" title="DQL:查询表中的记录"></a>DQL:查询表中的记录</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 表名;</span><br><span class="line"><span class="keyword">select</span> 字段列表 <span class="keyword">from</span> 表名列表 <span class="keyword">where</span> 条件列表 <span class="keyword">group</span> <span class="keyword">by</span> 分组字段 <span class="keyword">having</span> 分组之后的条件 <span class="keyword">order</span> <span class="keyword">by</span> 排序 <span class="keyword">limit</span> 分页限定</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--多个字段查询</span></span><br><span class="line">	<span class="keyword">select</span> 字段名<span class="number">1</span>,字段名<span class="number">2.</span>.. <span class="keyword">from</span> 表名;	<span class="keyword">select</span> * <span class="keyword">from</span> 表名;</span><br><span class="line"><span class="comment">--去除重复</span></span><br><span class="line">	distinct   <span class="keyword">select</span> <span class="keyword">distinct</span> 字段名<span class="number">1</span>,字段名<span class="number">2.</span>.. <span class="keyword">from</span> 表名;去除重复</span><br><span class="line"><span class="comment">--计算列</span></span><br><span class="line">	ifnull(表达式1,表达式2)：null参与的运算，计算结果都为null</span><br><span class="line">		表达式1为可能为null的字段，表达式2为表达式1是null时候的替换值</span><br><span class="line"><span class="comment">--其别名</span></span><br><span class="line">	as:as 也可以省略  as跟在字段后面</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--条件查询</span></span><br><span class="line">	1.where子句后跟的条件</span><br><span class="line">	2.运算符</span><br><span class="line">		&gt; &lt; &lt;= &gt;= = &lt;&gt;</span><br><span class="line">		between...and</span><br><span class="line">		in(集合)</span><br><span class="line">		Like 模糊查询 占位符   _:单个占位符  %:多个任意字符</span><br><span class="line">		is null</span><br><span class="line">		and 或 &amp;&amp;</span><br><span class="line">		or 或 ||</span><br><span class="line">		not 或 ！</span><br></pre></td></tr></table></figure>
+<p>​    </p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/15/Database/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/02/Wenc/" class="archive-article-date">
-  	<time datetime="2018-08-02T05:29:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/02/Wenc/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java高级阶段学习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/02/Wenc/">Java高级阶段学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL学习"><span class="toc-number">1.</span> <span class="toc-text">MySQL学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DDL-操作数据库、表"><span class="toc-number">1.1.</span> <span class="toc-text">DDL:操作数据库、表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-操作数据库：CRUD"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.操作数据库：CRUD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-操作表：CRUD"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.操作表：CRUD</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DML-增删改表中的数据"><span class="toc-number">1.2.</span> <span class="toc-text">DML:增删改表中的数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DQL-查询表中的记录"><span class="toc-number">1.3.</span> <span class="toc-text">DQL:查询表中的记录</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -236,8 +374,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
