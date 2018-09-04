@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="概念：    JavaScript是一门客户端脚本语言，运行在浏览器中，每个浏览器都有JavaScript的解析引擎，不需要编译，直接可以被浏览器解析执行了。 功能：    可以增强用户和html页面的交互功能，可以来控制html元素，让页面有一些动态效果，增加用户体验。 组成：    JavaScript = ECMAScript + BOM(浏览器对象模型) + DOM(文档对象模型) ECM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript学习笔记">
+<meta property="og:url" content="http://yoursite.com/2018/08/28/JavaScript/index.html">
+<meta property="og:site_name" content="Wenc的个人博客">
+<meta property="og:description" content="概念：    JavaScript是一门客户端脚本语言，运行在浏览器中，每个浏览器都有JavaScript的解析引擎，不需要编译，直接可以被浏览器解析执行了。 功能：    可以增强用户和html页面的交互功能，可以来控制html元素，让页面有一些动态效果，增加用户体验。 组成：    JavaScript = ECMAScript + BOM(浏览器对象模型) + DOM(文档对象模型) ECM">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-28T11:46:39.406Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript学习笔记">
+<meta name="twitter:description" content="概念：    JavaScript是一门客户端脚本语言，运行在浏览器中，每个浏览器都有JavaScript的解析引擎，不需要编译，直接可以被浏览器解析执行了。 功能：    可以增强用户和html页面的交互功能，可以来控制html元素，让页面有一些动态效果，增加用户体验。 组成：    JavaScript = ECMAScript + BOM(浏览器对象模型) + DOM(文档对象模型) ECM">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/28/JavaScript/"/>
+
+
+
+
+
+  <title>JavaScript学习笔记 | Wenc的个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wenc的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/JavaScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wenc">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wenc的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-28T15:56:32+08:00">
+                2018-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>概念：    JavaScript是一门客户端脚本语言，运行在浏览器中，每个浏览器都有JavaScript的解析引擎，不需要编译，直接可以被浏览器解析执行了。</p>
+<p>功能：    可以增强用户和html页面的交互功能，可以来控制html元素，让页面有一些动态效果，增加用户体验。</p>
+<p>组成：    JavaScript = ECMAScript + BOM(浏览器对象模型) + DOM(文档对象模型)</p>
+<h2 id="ECMAScript：客户端脚本语言标准"><a href="#ECMAScript：客户端脚本语言标准" class="headerlink" title="ECMAScript：客户端脚本语言标准"></a>ECMAScript：客户端脚本语言标准</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>基本语法：</span><br><span class="line">	<span class="number">1.</span>与html结合的方式</span><br><span class="line">		内部JS：定义&lt;script&gt;,标签内容就是js代码</span><br><span class="line">		外部JS：定义&lt;script&gt;,通过src属性引入外部的js文件</span><br><span class="line">	<span class="number">2.</span>注释</span><br><span class="line">		<span class="number">1.</span>单行注释：<span class="comment">//注释语句</span></span><br><span class="line">		<span class="number">2.</span>多行注释：<span class="comment">/*注释语句*/</span></span><br><span class="line">	<span class="number">3.</span>数据类型</span><br><span class="line">		原始数据类型：</span><br><span class="line">			number：数字。整数/小数/<span class="literal">NaN</span>(Not a <span class="built_in">Number</span> 不是一个数字的数字类型)</span><br><span class="line">			string：字符串。<span class="string">"abc"</span>,<span class="string">'aaa'</span></span><br><span class="line">			boolean：<span class="literal">true</span>和<span class="literal">false</span></span><br><span class="line">			<span class="literal">null</span>：一个对象为空的占位符</span><br><span class="line">			<span class="literal">undefined</span>：未定义。如果一个变量没有初始化值，则默认值为<span class="literal">undefined</span></span><br><span class="line">		引用数据类型：对象</span><br><span class="line">	<span class="number">4.</span>变量</span><br><span class="line">    	<span class="keyword">var</span> 变量名 = 初始化值;</span><br><span class="line">		<span class="keyword">typeof</span>运算符：获取变量的类型</span><br><span class="line">         	<span class="literal">null</span>运算后得到的是object</span><br><span class="line">	<span class="number">5.</span>运算符</span><br><span class="line">    	正负号：非number类型会转化为数字</span><br><span class="line">        	string转number：按照字面值转化，如果字面值不是数字，则转为<span class="literal">NaN</span></span><br><span class="line">            boolean转number：<span class="literal">true</span>转为<span class="number">1</span>，<span class="literal">false</span>转为<span class="number">0</span></span><br><span class="line">		比较：</span><br><span class="line">        	==：比较双等号两端的值，只要值相同则为<span class="literal">true</span> 例如：<span class="number">123</span>==<span class="string">"123"</span></span><br><span class="line">        	===：先比较三等号两端的类型，若类型相等再比较值是否相等</span><br><span class="line">		逻辑：</span><br><span class="line">			JavaScript中没有<span class="string">'&amp;'</span>和<span class="string">'|'</span>运算符</span><br><span class="line">			!加在其他类型之前可以将其他类型转为boolean：</span><br><span class="line">				<span class="number">1.</span>number：<span class="number">0</span>或<span class="literal">NaN</span>为假，其他为真</span><br><span class="line">				<span class="number">2.</span>string：除了空字符串，其他都是<span class="literal">true</span></span><br><span class="line">				<span class="number">3.</span><span class="literal">null</span>&amp;<span class="literal">undefined</span>都是<span class="literal">false</span></span><br><span class="line">				<span class="number">4.</span>对象：所有对象都为<span class="literal">true</span></span><br><span class="line"><span class="number">2.</span>基本对象</span><br><span class="line">	<span class="number">1.</span><span class="built_in">Function</span>：函数(方法)对象</span><br><span class="line">    	<span class="number">1.</span>创建：</span><br><span class="line">			<span class="number">1.</span><span class="keyword">var</span> fun = <span class="keyword">new</span> <span class="built_in">Function</span>(形式参数列表,方法体)；</span><br><span class="line">			<span class="number">2.</span><span class="function"><span class="keyword">function</span> 方法名称(<span class="params">形式参数列表</span>)</span>&#123;方法体&#125;</span><br><span class="line">			<span class="number">3.</span><span class="keyword">var</span> 方法名 = <span class="function"><span class="keyword">function</span>(<span class="params">形式参数列表</span>)</span>&#123;方法体&#125;</span><br><span class="line">		<span class="number">2.</span>属性：length：代表形参的个数</span><br><span class="line">		<span class="number">3.</span>特点：</span><br><span class="line">			<span class="number">1.</span>方法定义形参的类型不用写，返回值类型也不写。</span><br><span class="line">			<span class="number">2.</span>方法是一个对象，如果定义名称相同的方法，会覆盖</span><br><span class="line">			<span class="number">3.</span>在JS中，方法的调用只与方法的名称有关，和参数列表无关</span><br><span class="line">			<span class="number">4.</span>在方法声明中有一个隐藏的内置对象（数组），<span class="built_in">arguments</span>封装所有的实参</span><br><span class="line">	<span class="number">2.</span><span class="built_in">Array</span>:数组对象</span><br><span class="line">		<span class="number">1.</span>创建：</span><br><span class="line">			<span class="number">1.</span><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(元素列表);</span><br><span class="line">			<span class="number">2.</span><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(默认长度);</span><br><span class="line">			<span class="number">3.</span><span class="keyword">var</span> arr = [元素列表];</span><br><span class="line">		<span class="number">2.</span>方法：</span><br><span class="line">			join(参数)：将数组中的元素按照指定的分隔符拼接为字符串</span><br><span class="line">			push()：像数组的末尾添加一个或更多元素，并返回新的长度</span><br><span class="line">		<span class="number">3.</span>属性</span><br><span class="line">			length：数组的长度</span><br><span class="line">		<span class="number">4.</span>特点</span><br><span class="line">			<span class="number">1.</span>JS中，数组类型可变</span><br><span class="line">			<span class="number">2.</span>JS中，数组长度可变</span><br><span class="line">	<span class="number">3.</span><span class="built_in">Date</span>：日期对象</span><br><span class="line">		<span class="number">1.</span>创建：</span><br><span class="line">			<span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">		<span class="number">2.</span>方法：</span><br><span class="line">			toLocaleString()：返回当前date对象对应的时间本地字符串格式</span><br><span class="line">             getTime()：获取毫秒值。</span><br><span class="line">	<span class="number">4.</span><span class="built_in">Math</span>：数学对象</span><br><span class="line">		<span class="number">1.</span>方法：</span><br><span class="line">			random():返回<span class="number">0</span>~<span class="number">1</span>之间的随机数。含<span class="number">0</span>不含<span class="number">1</span></span><br><span class="line">             ceil(x):对数进行向上取整</span><br><span class="line">             floor(x):对数进行向下取整</span><br><span class="line">             round(x):把数四舍五入为最接近的整数</span><br><span class="line">		<span class="number">2.</span>属性：</span><br><span class="line">        	 PI</span><br><span class="line">	<span class="number">5.</span><span class="built_in">RegExp</span>：正则表达式对象</span><br><span class="line">		<span class="number">1.</span>正则表达式：定义字符串的组成规则。</span><br><span class="line">			<span class="number">1.</span>单个字符</span><br><span class="line">             	\d:单个数字字符[<span class="number">0</span><span class="number">-9</span>]</span><br><span class="line">			   \w:单个单词字符[a-zA-Z0<span class="number">-9</span>_]</span><br><span class="line">			<span class="number">2.</span>量词符号</span><br><span class="line">			   ?:表示出现<span class="number">0</span>次或<span class="number">1</span>次</span><br><span class="line">			   *:表示出现<span class="number">0</span>次或多次</span><br><span class="line">			   +:表示出现<span class="number">1</span>次或多次</span><br><span class="line">             <span class="number">3.</span>开始结束符号</span><br><span class="line">             	^:开始  $:结束</span><br><span class="line">         <span class="number">2.</span>正则对象</span><br><span class="line">			<span class="number">1.</span>创建</span><br><span class="line">             	<span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"^正则表达式$"</span>);</span><br><span class="line">			   <span class="keyword">var</span> reg = <span class="regexp">/^正则表达式$/</span>;</span><br><span class="line">             <span class="number">2.</span>方法</span><br><span class="line">             	test(参数)：验证指定的字符串是否符合正则定义的规范。</span><br><span class="line">	<span class="number">6.</span>Global</span><br><span class="line">		<span class="number">1.</span>全局对象，不需要对象直接调用方法</span><br><span class="line">		<span class="number">2.</span>方法</span><br><span class="line">            <span class="built_in">encodeURI</span>():URL编码</span><br><span class="line">            <span class="built_in">decodeURI</span>():URL解码</span><br><span class="line">            </span><br><span class="line">            <span class="built_in">encodeURIComponent</span>():URL编码，编码更多</span><br><span class="line">            <span class="built_in">decodeURIComponent</span>():URL解码</span><br><span class="line">            </span><br><span class="line">            <span class="built_in">parseInt</span>():将字符串转为数字，逐一判断，直到不是数字为止，将前边的数字部分转为number</span><br><span class="line">            <span class="built_in">isNaN</span>():判断一个值是否是<span class="literal">NaN</span></span><br><span class="line">            <span class="built_in">eval</span>():将字符串作为脚本代码来执行。</span><br></pre></td></tr></table></figure>
+<h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM:"></a>BOM:</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>概念 Browser <span class="built_in">Object</span> Model 浏览器对象模型</span><br><span class="line"><span class="number">2.</span>Window:窗口对象</span><br><span class="line">	<span class="number">1.</span>创建 不用创建，直接使用<span class="built_in">window</span></span><br><span class="line">	<span class="number">2.</span>方法     </span><br><span class="line">		<span class="number">1.</span>与弹出框有关的方法：</span><br><span class="line">			alert()：显示带有一段消息和一个确认按钮的警告框</span><br><span class="line">			confirm()：显示带有一段信息以及确认按钮和取消按钮的对话框</span><br><span class="line">            	点击确定返回<span class="literal">true</span> 点击取消返回<span class="literal">false</span></span><br><span class="line">			prompt()：显示可以提示用户输入的对话框</span><br><span class="line">            	返回值：获取用户输入的值</span><br><span class="line">		<span class="number">2.</span>打开关闭有关的方法：</span><br><span class="line">        	 close()：关闭浏览器窗口。谁调用关谁。</span><br><span class="line">             open()：打开一个新的浏览器窗口返回新的<span class="built_in">window</span>对象</span><br><span class="line">		<span class="number">3.</span>与定时器有关的方法：</span><br><span class="line">			setTimeout()：在指定的毫秒数后调用函数或计算机表达式(调用一次)</span><br><span class="line">			clearTimeout()：取消由setTimeout()方法设置的timeout</span><br><span class="line">			setInterval()：在指定的毫秒数后调用函数或计算机表达式(调用多次)</span><br><span class="line">			clearInterval()：取消由setInterval()方法设置的timeout</span><br><span class="line"><span class="number">3.</span>Location：地址栏对象</span><br><span class="line">	<span class="number">1.</span>获取</span><br><span class="line">		<span class="built_in">window</span>.location</span><br><span class="line">		location</span><br><span class="line">	<span class="number">2.</span>方法</span><br><span class="line">		reload() 重新加载当前的文档，刷新</span><br><span class="line">	<span class="number">3.</span>属性</span><br><span class="line">		href  设置或返回完整的URL</span><br><span class="line"><span class="number">4.</span>History：历史纪录对象</span><br><span class="line">	<span class="number">1.</span>获取</span><br><span class="line">		<span class="built_in">window</span>.history</span><br><span class="line">		history</span><br><span class="line">	<span class="number">2.</span>方法</span><br><span class="line">		back()：加载history列表中的前一个URL</span><br><span class="line">		forward()：加载history列表中的下一个URL</span><br><span class="line">		go(参数)：加载history列表中的某个具体页面</span><br><span class="line">	<span class="number">3.</span>属性</span><br><span class="line">		length 返回当前窗口历史列表中URL数量</span><br></pre></td></tr></table></figure>
+<h2 id="DOM："><a href="#DOM：" class="headerlink" title="DOM："></a>DOM：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Document：文档对象</span><br><span class="line">		<span class="number">1.</span> 创建(获取)：在html dom模型中可以使用<span class="built_in">window</span>对象来获取</span><br><span class="line">			<span class="number">1.</span> <span class="built_in">window</span>.document</span><br><span class="line">			<span class="number">2.</span> <span class="built_in">document</span></span><br><span class="line">		<span class="number">2.</span> 方法：</span><br><span class="line">			<span class="number">1.</span> 获取Element对象：</span><br><span class="line">				<span class="number">1.</span> getElementById()	： 根据id属性值获取元素对象。id属性值一般唯一</span><br><span class="line">				<span class="number">2.</span> getElementsByTagName()：根据元素名称获取元素对象们。返回值是一个数组</span><br><span class="line">				<span class="number">3.</span> getElementsByClassName():根据Class属性值获取元素对象们。返回值是一个数组</span><br><span class="line">				<span class="number">4.</span> getElementsByName(): 根据name属性值获取元素对象们。返回值是一个数组</span><br><span class="line">			<span class="number">2.</span> 创建其他DOM对象：</span><br><span class="line">				createAttribute(name)</span><br><span class="line">            	createComment()</span><br><span class="line">            	createElement()</span><br><span class="line">            	createTextNode()</span><br><span class="line">		<span class="number">3.</span> 属性</span><br><span class="line">	Element：元素对象</span><br><span class="line">		<span class="number">1.</span> 获取/创建：通过<span class="built_in">document</span>来获取和创建</span><br><span class="line">		<span class="number">2.</span> 方法：</span><br><span class="line">			<span class="number">1.</span> removeAttribute()：删除属性</span><br><span class="line">			<span class="number">2.</span> setAttribute()：设置属性</span><br><span class="line">	Node：节点对象，其他<span class="number">5</span>个的父对象</span><br><span class="line">		特点：所有dom对象都可以被认为是一个节点</span><br><span class="line">		方法：</span><br><span class="line">			CRUD dom树：</span><br><span class="line">				appendChild()：向节点的子节点列表的结尾添加新的子节点。</span><br><span class="line">				removeChild()	：删除（并返回）当前节点的指定子节点。</span><br><span class="line">				replaceChild()：用新节点替换一个子节点。</span><br><span class="line">		属性：</span><br><span class="line">			parentNode 返回节点的父节点。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/28/DesignPatterns/" rel="next" title="设计模式">
+                <i class="fa fa-chevron-left"></i> 设计模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Wenc</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript：客户端脚本语言标准"><span class="nav-number">1.</span> <span class="nav-text">ECMAScript：客户端脚本语言标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BOM"><span class="nav-number">2.</span> <span class="nav-text">BOM:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM："><span class="nav-number">3.</span> <span class="nav-text">DOM：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wenc</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v="></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v="></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v="></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v="></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v="></script>
+<script type="text/javascript" src="/js/src/post-details.js?v="></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v="></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

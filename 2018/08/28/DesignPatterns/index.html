@@ -79,14 +79,17 @@
 
 
 
+<meta name="description" content="创建型模式1.工厂模式(Factory Pattern)​    工厂模式是Java中常用的设计模式之一，属于创建型模式。在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。 ​    优点：1.一个调用者想创建对象，只需要知道其名称就好了 ​            2.扩展性高，如果想增加一个产品，只需要扩展一个工厂类就可以。 ​">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式">
 <meta property="og:url" content="http://yoursite.com/2018/08/28/DesignPatterns/index.html">
 <meta property="og:site_name" content="Wenc的个人博客">
+<meta property="og:description" content="创建型模式1.工厂模式(Factory Pattern)​    工厂模式是Java中常用的设计模式之一，属于创建型模式。在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。 ​    优点：1.一个调用者想创建对象，只需要知道其名称就好了 ​            2.扩展性高，如果想增加一个产品，只需要扩展一个工厂类就可以。 ​">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-28T06:13:52.614Z">
+<meta property="og:updated_time" content="2018-08-28T07:54:04.415Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式">
+<meta name="twitter:description" content="创建型模式1.工厂模式(Factory Pattern)​    工厂模式是Java中常用的设计模式之一，属于创建型模式。在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。 ​    优点：1.一个调用者想创建对象，只需要知道其名称就好了 ​            2.扩展性高，如果想增加一个产品，只需要扩展一个工厂类就可以。 ​">
 
 
 
@@ -296,7 +299,12 @@
       
 
       
-        
+        <h1 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h1><h2 id="1-工厂模式-Factory-Pattern"><a href="#1-工厂模式-Factory-Pattern" class="headerlink" title="1.工厂模式(Factory Pattern)"></a>1.工厂模式(Factory Pattern)</h2><p>​    工厂模式是Java中常用的设计模式之一，属于创建型模式。在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。</p>
+<p>​    <strong>优点：</strong>1.一个调用者想创建对象，只需要知道其名称就好了</p>
+<p>​            2.扩展性高，如果想增加一个产品，只需要扩展一个工厂类就可以。</p>
+<p>​            3.屏蔽产品的具体实现，调用者只关心产品的接口。</p>
+<p>​    <strong>缺点：</strong>每次增加一个产品时都需要增加一个具体类和对象实现工厂，使得系统中类的个数成倍增加，在一定程度上增加了系统的复杂度，同时也增加了系统具体类的依赖。</p>
+
       
     </div>
     
@@ -329,6 +337,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/28/JavaScript/" rel="prev" title="JavaScript学习笔记">
+                JavaScript学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -380,8 +392,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -396,7 +417,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -423,6 +444,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建型模式"><span class="nav-number">1.</span> <span class="nav-text">创建型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-工厂模式-Factory-Pattern"><span class="nav-number">1.1.</span> <span class="nav-text">1.工厂模式(Factory Pattern)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
